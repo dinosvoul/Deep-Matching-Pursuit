@@ -5,9 +5,7 @@ from keras.layers import Input
 from sklearn.model_selection import train_test_split
 from numpy import random
 from numpy import array
-from keras_adabound import AdaBound
-
-adab=AdaBound(lr=1e-3,final_lr=0.1)
+import keras
 
 
 
@@ -45,11 +43,12 @@ x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.15, random
 
 
 model = deepmp(input_shape=input_shape,SenMat=M,k=k)
+sgd=keras.optimizers.SGD(lr=0.01,decay=1e-6,momentum=0.9,nesterov=True)
 
 
 model.compile(
             loss='categorical_crossentropy',
-            optimizer=adab,
+            optimizer=sgd,
             metrics=['accuracy'])
 
 history=model.fit(y_train, x_train, batch_size=batch_size,validation_data=(y_test, x_test), epochs=epochs, verbose=1)
