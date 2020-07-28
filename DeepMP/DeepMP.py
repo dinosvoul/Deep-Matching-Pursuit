@@ -1,9 +1,4 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Thu Jun  4 15:11:26 2020
 
-@author: Konstantinos
-"""
 
 
 import keras
