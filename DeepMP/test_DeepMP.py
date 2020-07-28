@@ -1,9 +1,3 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Thu Jun  4 15:21:13 2020
-
-@author: Konstantinos
-"""
 
 from DeepMP import deepmp
 import numpy as np
